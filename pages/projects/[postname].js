@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown'
 
 import Layout from '@components/Layout'
 
-export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
+export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
   // if (!frontmatter) return <></>
 
   return (
@@ -26,7 +26,7 @@ export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
 export async function getStaticProps({ ...ctx }) {
   const { postname } = ctx.params
 
-  const content = await import(`'@root/posts/${postname}.md`)
+  const content = await import(`@root/posts/${postname}.md`)
   const config = await import(`@root/siteconfig.json`)
   const data = matter(content.default)
 
@@ -40,7 +40,7 @@ export async function getStaticProps({ ...ctx }) {
 }
 
 export async function getStaticPaths() {
-  const blogSlugs = ((context) => {
+  const slugs = ((context) => {
     const keys = context.keys()
     const data = keys.map((key, index) => {
       let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
@@ -48,9 +48,9 @@ export async function getStaticPaths() {
       return slug
     })
     return data
-  })(require.context('@components/posts', true, /\.md$/))
+  })(require.context('../../posts', true, /\.md$/))
 
-  const paths = blogSlugs.map((slug) => `/blog/${slug}`)
+  const paths = slugs.map((slug) => `/projects/${slug}`)
 
   return {
     paths,

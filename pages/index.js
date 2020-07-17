@@ -5,7 +5,7 @@ import matter from 'gray-matter'
 const Index = ({ title, description, ...props }) => {
   return (
     <Layout pageTitle={title}>
-      <h1 className="title">Welcome to my blog!</h1>
+      <h1 className="title">Welcome to my portfolio!</h1>
       <p className="description">
         {description}
       </p>
