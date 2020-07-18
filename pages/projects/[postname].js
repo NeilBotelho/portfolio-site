@@ -2,23 +2,67 @@ import Link from 'next/link'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 
+
 import Layout from '@components/Layout'
+
+
 
 export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
   // if (!frontmatter) return <></>
 
-  return (
+    return (
       <Layout pageTitle={`${siteTitle} | ${frontmatter.title}`}>
-        <Link href="/">
-          <a>Back to post list</a>
-        </Link>
         <article>
-          <h1>{frontmatter.title}</h1>
-          <p>By {frontmatter.author}</p>
-          <div>
-            <ReactMarkdown source={markdownBody} />
+          <div className="header">
+            <h1 className="title">{frontmatter.title}</h1>
+            <br/>
+            <div  className="date">  
+              <p>Posted: {frontmatter.date}</p>
+            </div>
+          </div>
+        <hr/>
+          <div className="md-body">
+            <ReactMarkdown source={markdownBody}/>
           </div>
         </article>
+        <style jsx global>{`body{background-color:#dfe8dc;}`}</style>
+        <style jsx>{`
+          article{
+            background-color:white;
+            margin:4vh 4vw 4vh 4vw;
+            padding:6vh;
+            min-height:80vh;
+            text-align:center;
+          }
+          .header{
+            font-family:monospace, sans-serif;
+          }
+    hr{
+      margin-top:10px;
+      padding:1px;
+      size:10px;
+      color:black;
+      background-color:black;
+    }
+          .title{
+            font-size:4vw;
+          }
+          .date{
+            font-size:1vw;
+            text-align:left;
+            margin-left:10%;
+          }
+          .md-body{
+            width:80%;
+            font-family:monospace, sans-serif;
+            // display:none;
+             margin:2vh 2vh 0vh 2vh ;
+            margin:auto;
+            margin-top:4vh;
+            text-align:left;
+          }
+
+        `}</style>
       </Layout>
   )
 }
