@@ -10,9 +10,15 @@ export default function Layout({ children, pageTitle, ...props }) {
       </Head>
       <section className="layout">
       <Header/>
-        <div className="content">{children}</div>
+      <body className="content">{children}</body>
       </section>
-      <footer>Built by me!</footer>
+      <footer></footer>
+      <style jsx global>{`
+        *{
+          margin:0;
+          border:0;
+        }      
+        `}</style>
     </>
   )
 }
