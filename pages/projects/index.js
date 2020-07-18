@@ -4,14 +4,46 @@ import matter from 'gray-matter'
 
 const Index = ({posts, title, description, ...props }) => {
   return (
- <div>
-   <h1>Projects</h1>
-       <PostList posts={posts} />
-
- </div>)
+  <Layout pageTitle="Projects">
+  <div className="content">
+    <div className="title">
+      <h1>Projects </h1>
+      <p className="subtitle">... and other cool things</p>
+    </div>  
+    <PostList posts={posts} />
+  </div>
+    <style jsx global>{`
+      body{
+        background-color:#dfe8dc;
+      }
+    `}</style>
+    <style jsx>{`
+      .content{
+        margin:4vh 4vw 4vh 4vw;
+        padding:6vh;
+        background-color:white;
+        text-align:center;
+      }
+      .title{
+        text-align:center;
+        font-family: monospace, sans-serif;
+        font-weight:normal;
+        font-size:3vw;
+      }
+      .subtitle{
+        font-size:1.5vw;
+        font-family:monospace;
+        color:#7e7f7e;
+      }
+    `}</style>
+    </Layout>
+    )
 }
 
 export default Index
+
+
+
 
 
 
@@ -34,7 +66,6 @@ export async function getStaticProps() {
     })
     return data
   })(require.context('../../posts', true, /\.md$/))
-
   return {
     props: {
       posts,
