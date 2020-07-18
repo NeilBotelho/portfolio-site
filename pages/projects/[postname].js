@@ -1,15 +1,16 @@
 import Link from 'next/link'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
-
-
+import htmlParser from 'react-markdown/plugins/html-parser'
 import Layout from '@components/Layout'
 
 
 
 export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
-  // if (!frontmatter) return <></>
-
+  const parseHtml = htmlParser({
+    isValidNode: node => node.type !== 'script',
+    processingInstructions: [/* ... */]
+  })
     return (
       <Layout pageTitle={`${siteTitle} | ${frontmatter.title}`}>
         <article>
@@ -22,7 +23,9 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
           </div>
         <hr/>
           <div className="md-body">
-            <ReactMarkdown source={markdownBody}/>
+         <ReactMarkdown source={markdownBody} 
+            escapeHtml={false} 
+            astPlugins={[parseHtml]} />
           </div>
         </article>
         <style jsx global>{`body{background-color:#dfe8dc;}`}</style>
