@@ -75,12 +75,16 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
             font-family:monospace, sans-serif;
             margin:2vh 2vh 0vh 2vh ;
             margin:auto;
-            margin-top:4vh;
+            margin-top:4rem;
             text-align:left;
           }
         @media (max-width:650px){
           article{
             margin:4vw;
+            padding:2vh;
+          }
+          .title{
+            font-size:5.5vw;
           }
           .subtitle{
             margin-left:0;
@@ -90,7 +94,8 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
             margin-right:0;
           }
           .md-body{
-            font-size:0.5rem;
+            margin-top:2rem;
+            font-size:0.8rem;
             width:100%;
           }
         }
