@@ -9,18 +9,26 @@ export default function PostList({ posts }) {
         {posts &&
           posts.map((post) => {
             return (
-              <Link href={{ pathname: `/projects/${post.slug}` }}>
-                <div key={post.slug} className="post-container">
+              <Link href={{ pathname: `/projects/${post.slug}` }} passHref>
+              <a className="post-container">
+                <div key={post.slug}>
                   <p className="post-date">{post.frontmatter.date}</p>
                   <br/>
                   <p className="post-title">{post.frontmatter.title}</p>
                   <p className="post-description">{post.frontmatter.description || "" }</p>
                 </div>
+              </a>
               </Link>
             )
           })}
     <style jsx>{`
+      //Clear stlye of anchor tags
+      a:link, a:visited, a:hover, a:active {
+        color:black;
+        text-decoration: none;
+      }
       .post-list{
+         text-decoration: none;
         list-style-type: none;
         text-align:left;
         margin:6vh 6vh 6vh 6vh;
@@ -28,19 +36,16 @@ export default function PostList({ posts }) {
         display:flex;
         flex-direction:column;
         align-items:center;
-        // justify-content:center;
       }
       .post-container{
         width:70%;
         font-size:1rem;
         box-shadow:1px 2px 3px 1px;
         margin:2vh;
-        // margin:
-       transition: scale .2s ease-in-out;
+        transition: scale .2s ease-in-out;
       }
       .post-container:hover, .post-container:active{
         transform:scale(1.01);
-        // border:2px solid;
       }
       .post-date{
         margin:2vh 2vh 0vh 2vh ;
