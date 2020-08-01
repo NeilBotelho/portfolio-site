@@ -17,9 +17,15 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
           <div className="header">
             <h1 className="title">{frontmatter.title}</h1>
             <br/>
-            <div  className="date">  
+            <div  className="subtitle">  
               <p>Posted: {frontmatter.date}</p>
+              {frontmatter.projectUrl && 
+                <p align="right" id="project-url">
+                  <a href="hello.com">source code</a>
+                </p>
+              }
             </div>
+
           </div>
         <hr/>
           <div className="md-body">
@@ -37,29 +43,37 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
             min-height:80vh;
             text-align:center;
           }
+
           .header{
             font-family:monospace, sans-serif;
           }
-    hr{
-      margin-top:10px;
-      padding:1px;
-      size:10px;
-      color:black;
-      background-color:black;
-    }
+
+          hr{
+            margin-top:10px;
+            padding:1px;
+            size:10px;
+            color:black;
+            background-color:black;
+          }
+          
           .title{
             font-size:4vw;
           }
-          .date{
+          
+          .subtitle{
             font-size:1vw;
             text-align:left;
             margin-left:10%;
+            display:flex;
+            justify-content:space-between;
+          }
+          #project-url{
+            margin-right:7rem;
           }
           .md-body{
             width:80%;
             font-family:monospace, sans-serif;
-            // display:none;
-             margin:2vh 2vh 0vh 2vh ;
+            margin:2vh 2vh 0vh 2vh ;
             margin:auto;
             margin-top:4vh;
             text-align:left;
