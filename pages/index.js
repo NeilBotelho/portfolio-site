@@ -25,8 +25,8 @@ const Index = ({ title, description, ...props }) => {
           height:100vh;
           background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('hero.jpg');
           background-position: center;
-          // background-repeat: no-repeat;
-          // background-size: cover;
+          background-repeat: no-repeat;
+          background-size: cover;
           position: relative;
           display:flex;
           justify-content:space-around;
@@ -74,9 +74,10 @@ const Index = ({ title, description, ...props }) => {
           transform:scale(1.1);
         }
 
-        @media (max-width:600px){
+        @media (max-width:650px){
           .hero-text{
-            font-size:10vw;
+            // line-height:3rem;
+            font-size:8vw;
             top:40%;
             color:white;
           }
