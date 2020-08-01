@@ -47,8 +47,7 @@ export default function PostList({ posts }) {
         transform:scale(1.01);
       }
       .post-date{
-        margin-top:0.7vh;
-        margin-left: 2vh ;
+        margin:0.7vh 1vh 1vh 2vh;
         padding:0;
         color:#7e7f7e;
       }
@@ -60,8 +59,8 @@ export default function PostList({ posts }) {
 
       }
       .post-description{
-         margin:0vh 2vh 2vh 2vh ;
-        padding-top:0;
+        margin:1vh 2vh 2vh 2vh ;
+        padding:0;
         color:#323332;
 
       }
@@ -81,6 +80,9 @@ export default function PostList({ posts }) {
         .post-title{
           margin:0vh 2vh 2vh 2vh ;
           padding-top:0;
+        }
+        .post-description{
+          margin-bottom:2vh;
         }
       }
       `}</style>

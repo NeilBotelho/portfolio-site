@@ -19,7 +19,7 @@ const Index = ({posts, title, description, ...props }) => {
     `}</style>
     <style jsx>{`
       .content{
-        min-height:90vh;
+        min-height:95vh;
         margin:4vh 6vw 0vh 6vw;
         background-color:white;
         text-align:center;
