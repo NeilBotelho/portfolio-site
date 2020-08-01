@@ -42,7 +42,7 @@ const Index = ({ title, description, ...props }) => {
           font-family: 'Montserrat', sans-serif;
           margin:0 auto;
           color:white;
-          line-height:2.5rem;
+          line-height:3.5rem;
         }
         .hero-text {
           font-size:4vw;
