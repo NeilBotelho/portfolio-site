@@ -13,6 +13,8 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
   })
     return (
       <Layout pageTitle={`${siteTitle} | ${frontmatter.title}`}>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet"/> 
+        
         <article>
           <div className="header">
             <h1 className="title">{frontmatter.title}</h1>
@@ -72,7 +74,7 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
           }
           .md-body{
             width:80%;
-            font-family:monospace, sans-serif;
+            font-family:monospace;
             margin:2vh 2vh 0vh 2vh ;
             margin:auto;
             margin-top:4rem;
@@ -84,9 +86,12 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
             padding:2vh;
           }
           .title{
+            font-family: "Mulish";
+            font-weight:bold;
             font-size:5.5vw;
           }
           .subtitle{
+            // font-family:sans-serif;
             margin-left:0;
             font-size:0.6rem;
           }
@@ -94,8 +99,9 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
             margin-right:0;
           }
           .md-body{
+            // font-family:sans-serif;
             margin-top:2rem;
-            font-size:0.8rem;
+            font-size:1rem;
             width:100%;
           }
         }
