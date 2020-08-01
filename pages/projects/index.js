@@ -19,21 +19,37 @@ const Index = ({posts, title, description, ...props }) => {
     `}</style>
     <style jsx>{`
       .content{
-        margin:4vh 4vw 4vh 4vw;
-        padding:6vh;
+        min-height:90vh;
+        margin:4vh 6vw 0vh 6vw;
         background-color:white;
         text-align:center;
       }
       .title{
         text-align:center;
+        padding-top:5vw;
         font-family: monospace, sans-serif;
         font-weight:normal;
-        font-size:3vw;
+        font-size:5vw;
       }
       .subtitle{
-        font-size:1.5vw;
+        font-size:3.5vw;
         font-family:monospace;
         color:#7e7f7e;
+      }
+      @media (min-width:650px){
+        .content{
+          margin:4vh 6vw 4vh 6vw;
+          padding:6vh;
+          padding-top:0;
+        }
+        .title{
+          font-size:3vw;
+          margin-top:4vh;
+
+        }
+        .subtitle{
+          font-size:1rem;
+        }
       }
     `}</style>
     </Layout>

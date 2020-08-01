@@ -13,7 +13,6 @@ export default function PostList({ posts }) {
               <a className="post-container">
                 <div key={post.slug}>
                   <p className="post-date">{post.frontmatter.date}</p>
-                  <br/>
                   <p className="post-title">{post.frontmatter.title}</p>
                   <p className="post-description">{post.frontmatter.description || "" }</p>
                 </div>
@@ -28,18 +27,18 @@ export default function PostList({ posts }) {
         text-decoration: none;
       }
       .post-list{
-         text-decoration: none;
+        text-decoration: none;
         list-style-type: none;
         text-align:left;
-        margin:6vh 6vh 6vh 6vh;
+        margin:8vh 6vh 6vh 6vh;
         font-family: 'Overpass Mono', monospace;
         display:flex;
         flex-direction:column;
         align-items:center;
       }
       .post-container{
-        width:70%;
-        font-size:1rem;
+        width:100%;
+        font-size:3vw;
         box-shadow:1px 2px 3px 1px;
         margin:2vh;
         transition: scale .2s ease-in-out;
@@ -48,20 +47,41 @@ export default function PostList({ posts }) {
         transform:scale(1.01);
       }
       .post-date{
-        margin:2vh 2vh 0vh 2vh ;
-        padding-bottom:0;
+        margin-top:0.7vh;
+        margin-left: 2vh ;
+        padding:0;
         color:#7e7f7e;
       }
       .post-title{
         font-weight:bold;
-        margin:0vh 2vh 2vh 2vh ;
-        padding-top:0;
+        margin:0;
+        margin-left: 2vh ;
+        padding:0;
 
       }
       .post-description{
          margin:0vh 2vh 2vh 2vh ;
         padding-top:0;
         color:#323332;
+
+      }
+
+      @media (min-width:650px){
+        .post-list{
+           // margin:6vh 6vh 6vh 6vh;
+        }
+        .post-container{
+          width:75%;
+          font-size:1rem;
+        }
+        .post-date{
+          margin:2vh 2vh 3vh 2vh ;
+          // padding-bottom:;
+        }
+        .post-title{
+          margin:0vh 2vh 2vh 2vh ;
+          padding-top:0;
+        }
       }
       `}</style>
     </div>
