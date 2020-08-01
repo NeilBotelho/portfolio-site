@@ -6,7 +6,7 @@ import Link from 'next/link'
 const Index = ({ title, description, ...props }) => {
   return (
     <Layout pageTitle={title}>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"/> 
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet"/> 
       <div className="hero-image">
         <div className="hero-adjacent-flexbox"></div>
         <div className="hero">
@@ -30,6 +30,7 @@ const Index = ({ title, description, ...props }) => {
           position: relative;
           display:flex;
           justify-content:space-around;
+
         }
 
         .hero-adjacent-flexbox{
@@ -38,16 +39,15 @@ const Index = ({ title, description, ...props }) => {
         }
         .hero{
           text-align: center;
-
-          font-family: 'Montserrat', sans-serif;
+          font-family: 'Mulish', sans-serif;
           margin:0 auto;
           color:white;
           line-height:3.5rem;
         }
         .hero-text {
           font-size:4vw;
-          margin-top:10%;
-          padding-top:50%;
+          margin-top:5%;
+          padding-top:40%;
         }
 
         button {
@@ -65,7 +65,7 @@ const Index = ({ title, description, ...props }) => {
           font-size:1.8vw;
           width:17vw;
           margin:auto;
-          margin-top:3rem;
+          margin-top:5rem;
           padding-top:0.2rem
           padding-bottom:0.2rem
           transition: all .2s ease-in-out;
@@ -76,9 +76,9 @@ const Index = ({ title, description, ...props }) => {
 
         @media (max-width:650px){
           .hero-text{
-            // line-height:3rem;
+            line-height:2.5rem;
             font-size:8vw;
-            top:40%;
+            padding-top:90%;
             color:white;
           }
 
@@ -92,7 +92,19 @@ const Index = ({ title, description, ...props }) => {
           font-family:monospace;
           width:40vw;
           text-align: center;
-       
+          }
+        }
+
+        @media (max-height:430px){
+          .hero-text{
+            padding-top:40%;
+            font-size:6vh;
+            line-height:2rem;
+          }
+          .projects-button{
+            margin-top:10%;
+            transform:scale(0.7)
+          }
         }
         @media (max-width:400px){
    
@@ -106,7 +118,6 @@ const Index = ({ title, description, ...props }) => {
         }
 
           }
-        }
         `}</style>
     </Layout>)
 }
