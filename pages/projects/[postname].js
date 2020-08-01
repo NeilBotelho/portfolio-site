@@ -18,7 +18,7 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
             <h1 className="title">{frontmatter.title}</h1>
             <br/>
             <div  className="subtitle">  
-              <p>Posted: {frontmatter.date}</p>
+              <p id="post-date">Posted: {frontmatter.date}</p>
               {frontmatter.projectUrl && 
                 <p align="right" id="project-url">
                   <a href="hello.com">source code</a>
@@ -27,7 +27,7 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
             </div>
 
           </div>
-        <hr/>
+          <hr/>
           <div className="md-body">
          <ReactMarkdown source={markdownBody} 
             escapeHtml={false} 
@@ -38,7 +38,7 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
         <style jsx>{`
           article{
             background-color:white;
-            margin:4vh 4vw 4vh 4vw;
+            margin:8vh 10vw 8vh 10vw;
             padding:6vh;
             min-height:80vh;
             text-align:center;
@@ -78,7 +78,22 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
             margin-top:4vh;
             text-align:left;
           }
-
+        @media (max-width:650px){
+          article{
+            margin:4vw;
+          }
+          .subtitle{
+            margin-left:0;
+            font-size:0.6rem;
+          }
+          #project-url{
+            margin-right:0;
+          }
+          .md-body{
+            font-size:0.5rem;
+            width:100%;
+          }
+        }
         `}</style>
       </Layout>
   )
