@@ -40,8 +40,8 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
         <style jsx>{`
           article{
             background-color:white;
-            margin:8vh 10vw 8vh 10vw;
-            padding:6vh;
+            margin:4vw;
+            padding:2vh;
             min-height:80vh;
             text-align:center;
           }
@@ -59,30 +59,53 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
           }
           
           .title{
-            font-size:4vw;
+            font-family: "Mulish";
+            font-weight:bold;
+            font-size:5.5vw;
           }
           
           .subtitle{
-            font-size:1vw;
+            font-size:0.6rem;
             text-align:left;
-            margin-left:10%;
+            margin-left:0;
             display:flex;
             justify-content:space-between;
+          }
+          #project-url{
+            margin-right:0;
+          }
+          .md-body{
+            width:100%;
+            font-family:monospace;
+            margin:2vh 2vh 0vh 2vh ;
+            margin:auto;
+            margin-top:2rem;
+            text-align:left;
+            font-size:1rem;
+            line-height:1.8rem;
+          }
+        @media (min-width:650px){
+          article{
+            margin:8vh 10vw 8vh 10vw;
+            padding:6vh;
+          }
+          .title{
+            font-size:4vw;
+          }
+          .subtitle{
+            margin-left:10%;
+            font-size:1vw;
           }
           #project-url{
             margin-right:7rem;
           }
           .md-body{
-            width:80%;
-            font-family:monospace;
-            margin:2vh 2vh 0vh 2vh ;
-            margin:auto;
-            margin-top:4rem;
-            text-align:left;
-            font-size:0.9rem;
             line-height:1.5rem;
+            margin-top:4rem;
+            font-size:0.9rem;
+            width:80%;
           }
-        @media (max-width:650px){
+        }        @media (max-width:650px){
           article{
             margin:4vw;
             padding:2vh;
