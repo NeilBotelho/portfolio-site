@@ -79,6 +79,8 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
             margin:auto;
             margin-top:4rem;
             text-align:left;
+            font-size:0.9rem;
+            line-height:1.5rem;
           }
         @media (max-width:650px){
           article{
@@ -99,7 +101,7 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
             margin-right:0;
           }
           .md-body{
-            // font-family:sans-serif;
+            line-height:1.8rem;
             margin-top:2rem;
             font-size:1rem;
             width:100%;
