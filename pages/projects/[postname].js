@@ -61,7 +61,7 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
           .title{
             font-family: "Mulish";
             font-weight:bold;
-            font-size:5.5vw;
+            font-size:8vw;
           }
           
           .subtitle{
@@ -104,30 +104,6 @@ export default function ProjectPost({ siteTitle, frontmatter, markdownBody }) {
             margin-top:4rem;
             font-size:0.9rem;
             width:80%;
-          }
-        }        @media (max-width:650px){
-          article{
-            margin:4vw;
-            padding:2vh;
-          }
-          .title{
-            font-family: "Mulish";
-            font-weight:bold;
-            font-size:5.5vw;
-          }
-          .subtitle{
-            // font-family:sans-serif;
-            margin-left:0;
-            font-size:0.6rem;
-          }
-          #project-url{
-            margin-right:0;
-          }
-          .md-body{
-            line-height:1.8rem;
-            margin-top:2rem;
-            font-size:1rem;
-            width:100%;
           }
         }
         `}</style>
