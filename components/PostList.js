@@ -1,12 +1,18 @@
 import Link from 'next/link'
 
 export default function PostList({ posts }) {
-  if (posts === 'undefined') return null
-
+    //sort posts by date
+    posts.sort((a,b)=>{
+      a=new Date(a.frontmatter.date)
+      b=new Date(b.frontmatter.date)
+      if(a>b){return -1}
+      if(a<b){return 1}
+      return 0
+  })
   return (
     <div className="post-list">
       {!posts && <div>No posts!</div>}
-        {posts &&
+        {posts && 
           posts.map((post) => {
             return (
               <Link href={{ pathname: `/projects/${post.slug}` }} passHref>
@@ -109,7 +115,7 @@ export async function getStaticProps() {
     })
     return data
   })(require.context('@root/posts', true, /\.md$/))
-
+  
   return {
     props: {
       posts,
