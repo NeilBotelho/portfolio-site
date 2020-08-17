@@ -11,5 +11,5 @@ They are, in no particular order:
 - learn how to write a programming language from scratch
 - write a markdown to html parser in js
 - build a simple database software from scratch
-- ~build a simple irc-like chat web client~
+- ~~build a simple irc-like chat web client~~
 - ml model deployed on this site
